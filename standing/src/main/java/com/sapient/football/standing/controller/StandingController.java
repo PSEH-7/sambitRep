@@ -38,7 +38,7 @@ public class StandingController {
 
 	@RequestMapping("/standing")
 
-	    public StandingVO greeting(@RequestParam("countryName") String countryName,
+	    public StandingVO getStandings(@RequestParam("countryName") String countryName,
 
 	    		                 @RequestParam("leagueName") String leagueName,
 
