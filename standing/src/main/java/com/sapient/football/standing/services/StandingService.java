@@ -14,10 +14,14 @@ public class StandingService {
 	CountryRepository countryRepository;	
 	@Autowired
 	TeamRepository teamRepository;	
+	@Autowired
+	LeagueRepository leagueRepository;
 
 	public StandingVO getStanding(String countryName, String leagueName, String teamName) {
 		Integer countryId = countryRepository.getCountryByName(countryName).getId();
 
+		Integer leagueId = leagueRepository.getLeagueByName(leagueName, countryId).getId();
+		
 		Integer teamId = teamRepository.getTeamByName(teamName, 148).getTeamId();
 
 		StandingVO standing = standingRepository.getStanding(148, teamId);
